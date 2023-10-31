@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+<!-- FONT -->
+        <link href="{% static 'pricedown bl.otf' %}">
+<!-- FONT -->
+        <title> Cheapy Trips Login</title>
+        {% block head_title %}{% endblock head_title %}
+    </head>
+<!-- HEAD -->
+
+<!-- BODY -->
+
+    <body>
+<!-- HEADER -->
+    <header class="header">
+        <div class="navbar">
+          <div class="logo-figure">
+          <figure class="logo-navbar">
+            <a href="#" class="header-logo">Cheapy Trip</a>
+          </figure>
+        </div>
+        </div>
+      </header>
+<!-- HEADER -->
+
+ <!-- BANNER-->
+  <div class="block" id="corps">
+    <div class="banner">
+      <img src="{% static 'sunset.jpg' %}" alt="plage" class="banner-image">
+      <div class="banner-content">
+
+<!-- Formulaire-->  
+        <div class="login-box">
+            <div class="login-form">
+                <div class="login-btn">
+                    <button class="button is-text is-responsive" data-form="loginSignIn">
+                        <strong>Connexion</strong>
+                    </button>
+                    <button class="button is-text is-responsive" data-form="loginSignUp">
+                        <strong>Inscription</strong>
+                    </button>
+                    <progress class="progress is-warning is-responsive" value="50" max="100">50%</progress>
+                <form class="champs">
+                    <div class="container">
+                        <div class="login-content">
+                            <div class="field">
+                                <p class="control has-icons-left has-icons-right">
+                                <input class="input" type="email" placeholder="E-mail">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                </p>
+                            </div>
+                            <div class="field">
+                                <p class="control has-icons-left">
+                                <input class="input" type="password" placeholder="Mot de passe">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                </p>
+                            </div>
+                            <div class="field">
+                                <p class="control">
+                                <button class="button is-warning is-fullwidth is-responsive">
+                                    Connexion
+                                </button>
+                                </p>
+                            </div>
+                            <div class='google'>
+                                {% load socialaccount %}
+                                {% block content %}
+                                <a class='google-text' href="{% provider_login_url 'google'%}?next=/">
+                                <img class='google-logo'src="{% static 'g-logo.png' %}" alt="Sign in with Google" />
+                                    Connectez-vous avec Google
+                                </a>
+                                {% endblock content %}
+                            </div>
+                            </div>
+                        </div>
+                </form>
+                </div>
+            </div>
+        </div>
+
+
+<!-- Formulaire-->
+
+        <script src="https://kit.fontawesome.com/b00ababd4d.js" crossorigin="anonymous"></script>
+    </body>
+</html>
